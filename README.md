@@ -1,5 +1,39 @@
 # Requests, JSON, and basic NLP with spaCy
 
+# virtual environment
+python -m venv Mod4venv
+Mod4venv\Scripts\activate
+
+# Spacy import error
+1. Go to the `pyvenv.cfg` file in the Virtual environment folder
+2. Set the `include-system-site-packages` to `true` and save the change
+3. Reactivate the virtual environment.
+
+# imports
+python -m pip install requests
+python -m pip install spacy
+python -m pip install spacytextblob
+
+# import lyrics
+pip install lyricsgenius
+import lyrics genius
+genius = lyricsgenius.Genius("gsjIgmpSiTLvwgKM-466TRtbJ-PTjYy8JXLGpilayE4XzdW-8gC8O3B24nnPdxeb")
+artist = genius.search_artist("Vincent Lima", max_songs=3, sort="title")
+print(artist.songs)
+
+    # search for a single song
+    song = artist.song("To You")
+    song = genius.search_song("To You", artist.name)
+    #save the artist's songs to aJSON file
+    artist.save_lyrics()
+# search and save lyrics to a specific song or an album
+python3 -m lyricsgenius song "Begin Again" "Andy Shauf" --save
+python3 -m lyricsgenius album "The Party" "Andy Shauf" --save
+
+# in the terminal
+set GENIUS_ACCESS_TOKEN=gsjIgmpSiTLvwgKM-466TRtbJ-PTjYy8JXLGpilayE4XzdW-8gC8O3B24nnPdxeb
+
+
 Complete the tasks in the Python Notebook in this repository.
 To be submitted for credit, all changes must be committed and pushed to this repository (do not create your own repository unless instructed to on the course website).
 
